@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+    <div>
+      <h2 class='text-primary'>List of Animals</h2>
+      <div class="listofanimals">
+        <% @animals.each do |animal|%>
+          <a href="animal/<%=animal.id%>"><p><%= animal.name %></p></a>
+        <% end %>
+      </div>
+      <hr>
+      <div>
+        <button class="btn show_form" type="button" name="button">New Animal</button>
+        <form class="form-group my_form" action="/index/new/animal" method="post">
+          <label for="">Name:</label>
+          <input required class="form-control" type="text" id="name" name="name" value="">
+          <label for="">Gender:</label>
+          <input type="radio" name="gender" id="gender" value="0" checked>Male &nbsp; &nbsp;
+          <input type="radio" name="gender" id="gender" value="1" >Female <br>
+          <label for="">Date of Admittance(DOA):</label>
+          <input required class="form-control" type="date" id="doa" name="doa">
+          <label for="">Type:</label>
+          <input required class="form-control" type="text" id="type" name="type" value="">
+          <label for="">Breed:</label>
+          <input required class="form-control" type="text" name="breed" id="breed" value="">
+          <button class="btn btn-success submit_form" type="submit" name="button">Save Animal</button>
+          <button class="btn cancel_form" type="button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="container">
+      <h2 class='text-primary'>List of Customers</h2>
+      <div class="listofcustomers">
+        <% @customers.each do |customer|%>
+          <p><%= customer.name %></p>
+        <% end %>
+      </div>
+      <hr>
+      <div>
+        <button class="btn show_form" type="button" name="button">New Customer</button>
+        <form class="form-group my_form" action="/index/new/customer" method="post">
+          <label for="">Name:</label>
+          <input required class="form-control" type="text" id="name" name="name" value="">
+          <label for="">Phone:</label>
+          <input class="form-control" type="tel" name="phone" id="phone" value="" >
+          <label for="">Type Preference:</label>
+          <input required class="form-control" type="text" id="type" name="type" value="">
+          <label for="">Breed Preference:</label>
+          <input required class="form-control" type="text" name="breed" id="breed" value="">
+          <button class="btn btn-success submit_form" type="submit" name="button">Save Customer</button>
+          <button class="btn cancel_form" type="button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
