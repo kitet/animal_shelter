@@ -1,2 +1,2 @@
 require ('./app')
-  run Sinatra::Applicatio
+  run Sinatra::Application
